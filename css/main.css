@@ -1,0 +1,254 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* typo hierzo */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+/* video styling */
+.background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  /* z-index is welke laag */
+  z-index: -1;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  height: 40px;
+  width: 70%;
+  position: fixed;
+  margin-left: 50px;
+  /* makkelijkste manier om te centreren binnen een div */
+  display: flex;
+  top: 25px;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+header .wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: white;
+  text-shadow: 1px 1px 2px white, 0 0 25px green, 0 0 5px green;
+}
+
+/* audio styling, werkt alleen in chrome */
+audio {
+  /* breedte van audio */
+  width: 120%;
+  /* hoogte van audio */
+  height: 40px;
+}
+
+audio:focus {
+  outline: none;
+}
+
+audio::-webkit-media-controls-panel {
+  border: none;
+  border-radius: 2em;
+  font-size: 1em;
+  padding: 0.5em;
+  background-color: #02A317;
+  color: #FFFFFF;
+  -moz-box-shadow:    inset 0 0 8px 000000;
+  -webkit-box-shadow: inset 0 0 8px 000000;
+  box-shadow:         inset 0 0 8px 000000;
+  z-index: 99;
+}
+
+main {
+  height: 100%;
+  /* makkelijkste lay out manier */
+  display: flex;
+}
+
+/* kolommen */
+.column {
+  height: 100%;
+  width: 50%;
+  /* maak kolom scrollable */
+  overflow: scroll;
+}
+
+.column::-webkit-scrollbar {
+    display: none;
+}
+
+.content {
+  /* marges binnen de kolommen */
+  padding: 50px;
+  width: 100%;
+  font-size: 50px;
+  color: #FFFFFF;
+}
+
+.content img {
+  /* alle afbeeldingen nemen 100% breedte. check html
+  om individueel de grootte te bepalen */
+  max-width: 100%;
+  border-radius: 10em;
+}
+
+.content img:not(:last-child) {
+  /* marges onder elke afbeelding BEHALVE de laatste */
+  padding-bottom: 10px
+}
+/*
+.image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  height: auto;
+  border-radius: 10em;
+}
+
+.overlay-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  max-width: 100%;
+  border-radius: 10em;
+  opacity: 1;
+  transition: .5s ease;
+  background-color: green;
+}
+
+.image-wrapper:hover .overlay-image {
+  opacity: 0;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  border-radius: 10em;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+} */
+
+.content iframe {
+  /* alle videos nemen 100% breedte. check html
+  om individueel de grootte te bepalen */
+  max-width: 100%;
+  border-radius: 1em;
+
+}
+
+.content iframe:not(:last-child) {
+  /* marges onder elke afbeelding BEHALVE de laatste */
+  padding-bottom: 0px
+}
+
+
+/* navigatie knoppen */
+nav {
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  /* makkelijkste manier om te centreren binnen een div */
+  display: flex;
+  align-items: center;
+  z-index: 99;
+}
+
+nav .wrapper {
+  width: 100%;
+  padding: 50px;
+  justify-content: space-between;
+}
+
+/* de knoppen zelf */
+nav .wrapper button {
+  cursor: pointer;
+  background-color: #02A317;
+  color: white;
+  border: none;
+  border-radius: 2em;
+  font-size: 1em;
+  padding: 0.5em;
+  -moz-box-shadow:    inset 0 0 8px 000000;
+  -webkit-box-shadow: inset 0 0 8px 000000;
+  box-shadow:         inset 0 0 8px 000000;
+  /* minimale hoogte en breedte */
+  min-width:  5%;
+  min-height: 30px;
+}
+
+nav .wrapper
+  button:active,
+  button:hover,
+  button:focus {
+  cursor: pointer;
+  background-color: #F22A02;
+  color: #02A317;
+  border-radius: 2em;
+  padding: 0.5em;
+  font-size: 1em;
+  outline: none;
+  -moz-box-shadow:    inset 0 0 8px 000000;
+  -webkit-box-shadow: inset 0 0 8px 000000;
+  box-shadow:         inset 0 0 8px 000000;
+  /* minimale hoogte en breedte */
+  min-width: 5%;
+  min-height: 30px;
+}
+
+/* overlay */
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 255, 0, 0.8);
+  overflow: scroll;
+  z-index: 98;
+}
+
+/* hier kan je de overlay content stylen */
+.overlay .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.overlay .content::-webkit-scrollbar {
+    display: none;
+}
